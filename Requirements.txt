@@ -1,0 +1,32 @@
+Requirements : py 3.11.1 64Bit
+pip install flask-sse gunicorn gevent
+pip install playsound==1.2.2
+pip install gTTS
+pip install SpeechRecognition
+pip install waitress
+
+
+Install Redis (Visit this link : https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows/)
+1. Redis is not officially supported on windows. However, you can install Redis on Windows for development
+2. To install Redis on windows, you'll first need to enable WSL2 (Windows Subsystem for Linux).
+3. Open Windows terminals
+4. wsl --list
+5. wsl -d Ubuntu-22.04
+6. And run following command
+   curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+   echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+   
+   
+sudo apt-get update
+sudo apt-get install redis
+
+7. Lastly start the Redis server like so
+   sudo service redis-server start
+
+8. Connect to Redis
+   redis-cli 
+   127.0.0.1:6379> ping
+   PONG
+
+
+ 
